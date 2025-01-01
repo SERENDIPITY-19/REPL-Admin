@@ -151,6 +151,10 @@ body {
   background-color: #335edd;
 }
 
+.navbar-divider-first{
+  margin-top: 0;
+}
+
 .navbar-heading {
   font-size: 11px;
   color: #b8bbd1;
