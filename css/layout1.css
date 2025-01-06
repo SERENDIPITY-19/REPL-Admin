@@ -1,9 +1,17 @@
 /* Base Styles */
-:root {
+:root[data-theme="light"] {
   --main-bg-color: #f8f9fc;
   --main-text-color: #fff;
   --link-default-color: black;
   --nav-bg-color: #2e59d9;
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] {
+  --main-bg-color: #121212;
+  --main-text-color: #fff;
+  --link-default-color: black;
+  --nav-bg-color: #010409;
   --box-shadow-color: rgba(0, 0, 0, 0.2);
 }
 

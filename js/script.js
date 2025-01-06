@@ -19,6 +19,7 @@ document.querySelectorAll(".toggle-area").forEach((toggle) => {
   });
 });
 
+
 // User-info dropdown
 const userInfo = document.querySelector('.user-info');
 const dropdownMenu = document.querySelector('.user-dropdown-menu');
@@ -33,6 +34,7 @@ document.addEventListener('click', (event) => {
         dropdownMenu.classList.remove('show'); 
     }
 });
+
 
 // Scroll to Top
 const scrollToTopBtn = document.getElementById("scrollToTop");
@@ -51,10 +53,12 @@ scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+
 // Toggle Navbar in Mobile View
 function toggleSidebar() {
   document.body.classList.toggle("main-nav-open");
 }
+
 
 // Tables
 $(document).ready(function() {
@@ -66,4 +70,37 @@ $(document).ready(function() {
         },
         pagingType: "simple_numbers"
     });
+});
+
+
+//Theme Toggle
+const themeIcon = document.getElementById('theme-icon');
+
+function toggleTheme() {
+    const root = document.documentElement; 
+    const currentTheme = root.getAttribute('data-theme') || 'light';
+
+    if (currentTheme === 'light') {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.replace('fa-sun', 'fa-moon'); 
+    } else {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.replace('fa-moon', 'fa-sun'); 
+    }
+}
+
+themeIcon.addEventListener('click', toggleTheme);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const root = document.documentElement;
+
+    root.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
 });
