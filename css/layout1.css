@@ -1,152 +1,176 @@
-/* Base Styles */
-:root[data-theme="light"] {
-  --main-bg-color: #f8f9fc;
-  --main-text-color: #fff;
-  --link-default-color: black;
-  --nav-bg-color: #2e59d9;
-  --box-shadow-color: rgba(0, 0, 0, 0.2);
-}
-
-:root[data-theme="dark"] {
-  --main-bg-color: #121212;
-  --main-text-color: #fff;
-  --link-default-color: black;
-  --nav-bg-color: #010409;
-  --box-shadow-color: rgba(0, 0, 0, 0.2);
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--main-bg-color);
 }
 
+:root {
+    --primary-bg-color: #f8f9fc;
+    --primary-text-color: black;
+    --secondary-text-color: white;
+    --nav-bg-color: #2e59d9;
+    --main-bg-color: #fff;
+    --box-shadow-color: rgb(0, 0, 0, 0.1);
+    --border-color: #ccc;
+}
+
+/* Grid Container */
 .layout-wrapper {
-  display: grid;
-  grid-template-areas: 
-    "nav header"
-    "nav main"
-    "nav footer";
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "before-header before-header"
+        "navigation header"
+        "navigation after-header"
+        "navigation before-main"
+        "navigation feature"
+        "navigation aside-first"
+        "navigation before-content"
+        "navigation content"
+        "navigation after-content"
+        "navigation aside-second"
+        "navigation after-main"
+        "navigation before-footer"
+        "navigation footer"
+        "navigation after-footer";
+    grid-template-columns: 50px 5fr;
+    min-height: 100vh;
 }
 
-ul{
-  list-style: none;
+/* Grid Area Styles */
+.layout-wrapper>* {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
 }
 
-li a{
-  text-decoration: none;
-  color: var(--link-default-color);
+.before-header {
+    grid-area: before-header;
+    background: var(--primary-bg-color);
 }
 
-.page-header {
-  grid-area: header;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--main-bg-color);
-  padding: 1rem 1rem;
-  box-shadow: 5px 5px 10px var(--box-shadow-color); 
-  z-index: 1000;
+.header {
+    grid-area: header;
+    background: var(--primary-bg-color);
 }
 
-.page-header ul{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+.after-header {
+    grid-area: after-header;
+    background: var(--primary-bg-color);
+    box-shadow: 0px 10px 10px var(--box-shadow-color);
+    z-index: 1000;
 }
 
-.page-header h1, .page-header .subheader, aside {
-  display: none;
+.navigation {
+    grid-area: navigation;
+    background: var(--nav-bg-color);
+    color: var(--secondary-text-color);
+    word-wrap: break-word;
 }
 
-nav {
-  grid-area: nav;
-  background-color: var(--nav-bg-color);
-  color: var(--main-text-color);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+.before-main {
+    grid-area: before-main;
+    background: var(--main-bg-color);
 }
 
-nav ul {
-  padding: 0;
+.feature {
+    grid-area: feature;
+    background: var(--main-bg-color);
 }
 
-nav li{
-  margin-bottom: 1rem;
+.aside-first {
+    grid-area: aside-first;
+    background: var(--main-bg-color);
 }
 
-nav li a{
-  color: var(--main-text-color);
+.before-content {
+    grid-area: before-content;
+    background: var(--main-bg-color);
 }
 
-
-main {
-  grid-area: main;
-  padding: 1rem;
+.content {
+    grid-area: content;
+    background: var(--main-bg-color);
 }
 
-
-main section {
-  padding: 1rem;
+.after-content {
+    grid-area: after-content;
+    background: var(--main-bg-color);
 }
 
-footer {
-  grid-area: footer;
-  background-color: var(--main-bg-color);
-  padding: 1rem;
-  text-align: center;
+.aside-second {
+    grid-area: aside-second;
+    background: var(--main-bg-color);
 }
 
-footer li{
-  display: none;
+.after-main {
+    grid-area: after-main;
+    background: var(--main-bg-color);
+    box-shadow: 0px 10px 10px var(--box-shadow-color);
+    z-index: 1000;
 }
 
+.before-footer {
+    grid-area: before-footer;
+    background: var(--primary-bg-color);
+}
+
+.footer {
+    grid-area: footer;
+    background: var(--primary-bg-color);
+}
+
+.after-footer {
+    grid-area: after-footer;
+    background: var(--primary-bg-color);
+}
+
+/* Responsive Design */
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .layout-wrapper {
+        grid-template-areas:
+        "before-header before-header"
+        "navigation header"
+        "navigation after-header"
+        "navigation before-main"
+        "navigation feature"
+        "navigation aside-first"
+        "navigation before-content"
+        "navigation content"
+        "navigation after-content"
+        "navigation aside-second"
+        "navigation after-main"
+        "navigation before-footer"
+        "navigation footer"
+        "navigation after-footer";
+        grid-template-columns: 1fr 5fr;
+    }
+}
 
 /* Desktop View */
 @media (min-width: 1024px) {
-  .layout-wrapper {
-    grid-template-areas: 
-    "nav header"
-    "nav main"
-    "nav footer";
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: auto 1fr auto;
-  }
-}
-
-/* Tablet View */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .layout-wrapper {
-    grid-template-areas: 
-      "nav header"
-      "nav main"
-      "nav footer";
-      grid-template-columns: 1.25fr 4fr;
-      grid-template-rows: auto 1fr auto;
-  }
-
-  .page-header {
-    flex-wrap: wrap;
-  }
-}
-
-/* Mobile View */
-@media (max-width: 767px) {
-  .layout-wrapper {
-    grid-template-areas: 
-      "nav header"
-      "nav main"
-      "nav footer";
-      grid-template-columns: auto 5fr;
-      grid-template-rows: auto 1fr auto;
-  }
-
-  .page-header {
-    flex-wrap: wrap;
-  }
+    .layout-wrapper {
+        grid-template-areas:
+            "before-header before-header"
+            "navigation header"
+            "navigation after-header"
+            "navigation before-main"
+            "navigation feature"
+            "navigation aside-first"
+            "navigation before-content"
+            "navigation content"
+            "navigation after-content"
+            "navigation aside-second"
+            "navigation after-main"
+            "navigation before-footer"
+            "navigation footer"
+            "navigation after-footer";
+        grid-template-columns: 1fr 5fr;
+    }
 }

@@ -14,7 +14,20 @@
 <body>
     <div class="layout-wrapper">
         <!-- Header Section -->
-        <header class="page-header">
+        <div class="before-header">
+            <div class="responsive-icons">
+                <div class="icon desktop">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div class="icon tablet">
+                    <i class="fa-solid fa-tablet"></i>
+                </div>
+                <div class="icon mobile">
+                    <i class="fa-solid fa-mobile"></i>
+                </div>
+            </div>
+         </div>
+        <header class="header page-header">
             <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
 
             <div class="page-header-content">
@@ -59,7 +72,7 @@
         </header>
 
         <!-- Nav Section -->
-        <nav class="main-nav" aria-label="Primary Navigation">
+        <nav class="navigation main-nav" aria-label="Primary Navigation">
             <div class="logo-container">
                 <i class="fas fa-laugh-wink site-logo"></i>
                 <div class="site-title">REPL ADMIN</div>
@@ -154,12 +167,11 @@
         </nav>
 
         <!-- Main Content Section -->
-        <main class="main-container main-container-dashboard">
-            <header class="main-header main-header-dashboard">
-                <h2 class="page-title">Dashboard</h2>
-                <button class="btn btn-primary generate-report-button"><i class="fas fa-download fa-sm"></i>Generate Report</button>
-            </header>
-
+        <div class="before-main main-header main-header-dashboard">
+            <h2 class="page-title">Dashboard</h2>
+            <button class="btn btn-primary generate-report-button"><i class="fas fa-download fa-sm"></i>Generate Report</button>
+        </div>
+        <main class="content main-container main-container-dashboard">
             <section class="cards dashboard-cards row">
                 <article class="card col-md-6 col-lg-3 border-left-primary">
                     <div class="card-body dashboard-card-body">
@@ -202,7 +214,7 @@
                 </article>
             </section>
             
-            <section class="charts-section row g-3 mt-4">
+            <section class="charts-section row">
                 <article class="chart col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -239,16 +251,6 @@
             
         </main>
 
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                </ul>
-            </nav>
-            <p>Additional information or ads.</p>
-        </aside>
 
         <!-- Footer Section -->
         <footer class="footer">
