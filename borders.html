@@ -14,7 +14,20 @@
 <body>
     <div class="layout-wrapper">
         <!-- Header Section -->
-        <header class="page-header">
+        <div class="before-header">
+            <div class="responsive-icons">
+                <div class="icon desktop">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div class="icon tablet">
+                    <i class="fa-solid fa-tablet"></i>
+                </div>
+                <div class="icon mobile">
+                    <i class="fa-solid fa-mobile"></i>
+                </div>
+            </div>
+         </div>
+        <header class="header page-header">
             <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
 
             <div class="page-header-content">
@@ -59,7 +72,7 @@
         </header>
 
         <!-- Nav Section -->
-        <nav class="main-nav" aria-label="Primary Navigation">
+        <nav class="navigation main-nav" aria-label="Primary Navigation">
             <div class="logo-container">
                 <i class="fas fa-laugh-wink site-logo"></i>
                 <div class="site-title">REPL ADMIN</div>
@@ -154,13 +167,12 @@
         </nav>
 
         <!-- Main Content Section -->
-        <main class="main-container main-container-borders">
-            <header class="main-header main-header-borders">
+         <div class="before-main main-header main-header-borders">
                 <h2 class="page-title">Border Utilities</h2>
                 <p>Bootstrap's default utility classes can be found on the official Bootstrap Documentation page. The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.</p>
-            </header>
-
-            <section class="cards borders-section-cards row g-3 mt-4">
+         </div>
+        <main class="content main-container main-container-borders">
+            <section class="cards borders-section-cards row mt-4">
                 <article class="border-left-primary col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -175,9 +187,6 @@
                         </div>
                     </div>
                 </article>
-            </section>
-
-            <section class="cards borders-section-cards row g-3 mt-4">
                 <article class="border-left-secondary col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -192,9 +201,6 @@
                         </div>
                     </div>
                 </article>
-            </section>
-
-            <section class="cards borders-section-cards row g-3 mt-4">
                 <article class="border-left-success col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -209,9 +215,6 @@
                         </div>
                     </div>
                 </article>
-            </section>
-
-            <section class="cards borders-section-cards row g-3 mt-4">
                 <article class="border-left-info col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -226,9 +229,6 @@
                         </div>
                     </div>
                 </article>
-            </section>
-
-            <section class="cards borders-section-cards row g-3 mt-4">
                 <article class="border-left-warning col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -243,9 +243,6 @@
                         </div>
                     </div>
                 </article>
-            </section>
-
-            <section class="cards borders-section-cards row g-3 mt-4">
                 <article class="border-left-danger col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -277,17 +274,6 @@
             </section>
 
         </main>
-
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                </ul>
-            </nav>
-            <p>Additional information or ads.</p>
-        </aside>
 
         <!-- Footer Section -->
         <footer class="footer">

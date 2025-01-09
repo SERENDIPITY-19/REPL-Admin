@@ -14,7 +14,20 @@
 <body>
     <div class="layout-wrapper">
         <!-- Header Section -->
-        <header class="page-header">
+        <div class="before-header">
+            <div class="responsive-icons">
+                <div class="icon desktop">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div class="icon tablet">
+                    <i class="fa-solid fa-tablet"></i>
+                </div>
+                <div class="icon mobile">
+                    <i class="fa-solid fa-mobile"></i>
+                </div>
+            </div>
+         </div>
+        <header class="header page-header">
             <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
 
             <div class="page-header-content">
@@ -59,7 +72,7 @@
         </header>
 
         <!-- Nav Section -->
-        <nav class="main-nav" aria-label="Primary Navigation">
+        <nav class="navigation main-nav" aria-label="Primary Navigation">
             <div class="logo-container">
                 <i class="fas fa-laugh-wink site-logo"></i>
                 <div class="site-title">REPL ADMIN</div>
@@ -154,10 +167,11 @@
         </nav>
 
         <!-- Main Content Section -->
-        <main class="main-container">
-            <header class="main-header">
-                <h2 class="page-title">Blank Page</h2>
-            </header>
+        <div class="before-main main-header">
+            <h2 class="page-title">Blank Page</h2>
+        </div>
+        <main class="content main-container">
+                
         </main>
 
         <!-- Footer Section -->

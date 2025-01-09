@@ -16,7 +16,20 @@
 <body>
     <div class="layout-wrapper">
         <!-- Header Section -->
-        <header class="page-header">
+        <div class="before-header">
+            <div class="responsive-icons">
+                <div class="icon desktop">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div class="icon tablet">
+                    <i class="fa-solid fa-tablet"></i>
+                </div>
+                <div class="icon mobile">
+                    <i class="fa-solid fa-mobile"></i>
+                </div>
+            </div>
+         </div>
+        <header class="header page-header">
             <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
 
             <div class="page-header-content">
@@ -61,7 +74,7 @@
         </header>
 
         <!-- Nav Section -->
-        <nav class="main-nav" aria-label="Primary Navigation">
+        <nav class="navigation main-nav" aria-label="Primary Navigation">
             <div class="logo-container">
                 <i class="fas fa-laugh-wink site-logo"></i>
                 <div class="site-title">REPL ADMIN</div>
@@ -156,16 +169,15 @@
         </nav>
 
         <!-- Main Content Section -->
-        <main class="main-container main-container-tables">
-            <header class="main-header main-header-tables">
-                <h2 class="page-title">Tables</h2>
+         <div class="before-main main-header main-header-tables">
+            <h2 class="page-title">Tables</h2>
                 <p>
                     DataTables is a third party plugin that is used to generate the demo
                     table below. For more information about DataTables, please visit the
                     official DataTables documentation.
                 </p>
-            </header>
-
+         </div>
+        <main class="content main-container main-container-tables">
             <section class="container tables-container">
                 <h3 class="database-table-title">DataTables Example</h3>
                 <div class="table-responsive">
@@ -212,17 +224,6 @@
                 </div>
             </section>
         </main>
-
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                </ul>
-            </nav>
-            <p>Additional information or ads.</p>
-        </aside>
 
         <!-- Footer Section -->
         <footer class="footer">
