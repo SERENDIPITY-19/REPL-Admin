@@ -76,6 +76,7 @@
 }
 
 body{
+    box-sizing: border-box;
     margin-top:62px;
 }
 
@@ -122,6 +123,11 @@ li a {
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+}
+
+.icon.active {
+    background-color: var(--responsive-icon-hover-bg-color);
+    border: 2px solid var(--responsive-icon-hover-border-color);
 }
 
 .icon:hover {
@@ -453,26 +459,6 @@ main {
 
 
 /* Login and Register and Forgot Password*/
-.modified-layout-wrapper{
-    display: grid;
-    grid-template-areas:
-        "before-header"
-        "header"
-        "after-header"
-        "before-main"
-        "feature"
-        "aside-first"
-        "before-content"
-        "content"
-        "after-content"
-        "aside-second"
-        "after-main"
-        "before-footer"
-        "footer"
-        "after-footer"; 
-    grid-template-columns: auto;
-}
-
 .login-body,
 .register-body,
 .forgotpassword-body {
@@ -581,22 +567,48 @@ footer {
 }
 
 /* Scroll to Top Button */
-#scrollToTop {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    background: var(--scrollToTop-bg-color);
-    color: var(--scrollToTop-color);
-    border: none;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
+.layout-wrapper{
+    position: relative;
 }
+
+body.preview-mode {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #1e2124;
+}
+
+body.preview-mode.desktop-view {
+    background-color: initial;
+}
+
+.preview-container {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    transition: width 0.2s ease;
+}
+
+.preview-container.mobile-view {
+    max-width: 767px;
+}
+
+.preview-container.tablet-view {
+    max-width: 1023px;
+    min-width: 768px;
+}
+
+.preview-container.desktop-view {
+    min-width: 1024px;
+}
+
 
 /* Responsive Design */
 /* Desktop View */
-@media (min-width: 1024px){
+/* @media (min-width: 1024px)*/
+.preview-container.desktop-view
+{ 
     .page-header .search-input{
         max-width: 400px;
     }
@@ -623,10 +635,25 @@ footer {
         flex: 0 0 auto;
         width: 22%;
     }
+
+    #scrollToTop {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        background: var(--scrollToTop-bg-color);
+        color: var(--scrollToTop-color);
+        border: none;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 }
 
 /* Tablet View */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* @media (min-width: 768px) and (max-width: 1023px)  */
+.preview-container.tablet-view 
+{
     .page-header .search-input {
         max-width: 250px;
     }
@@ -667,10 +694,25 @@ footer {
         flex: 0 0 auto;
         width: 42%;
     }
+
+    #scrollToTop {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        background: var(--scrollToTop-bg-color);
+        color: var(--scrollToTop-color);
+        border: none;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 }
 
 /* Mobile View */
-@media (max-width: 767px) {
+/* @media (max-width: 767px)   */
+.preview-container.mobile-view 
+ {
     .layout-wrapper{
         grid-template-columns: auto 5fr;
     }
@@ -812,8 +854,21 @@ footer {
         white-space: nowrap;
     }
 
-    .dashboard-cards{
-        padding: 10px;
-        gap: 10px;
+    #scrollToTop {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        background: var(--scrollToTop-bg-color);
+        color: var(--scrollToTop-color);
+        border: none;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .card{
+        flex: 0 0 auto;
+        width: 90%;
     }
 }

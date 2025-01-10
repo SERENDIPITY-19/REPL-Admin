@@ -104,3 +104,82 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.classList.replace('fa-moon', 'fa-sun');
     }
 });
+
+
+//Screen Preview 
+document.addEventListener('DOMContentLoaded', function() {
+  const desktopIcon = document.querySelector('.icon.desktop');
+  const tabletIcon = document.querySelector('.icon.tablet');
+  const mobileIcon = document.querySelector('.icon.mobile');
+  
+  function setupPreviewMode() {
+      const mainContent = document.querySelector('.layout-wrapper');
+      if (!document.querySelector('.preview-container')) {
+          const previewContainer = document.createElement('div');
+          previewContainer.className = 'preview-container';
+          mainContent.parentNode.insertBefore(previewContainer, mainContent);
+          previewContainer.appendChild(mainContent);
+      }
+      document.body.classList.add('preview-mode');
+  }
+
+  function removeActiveClass() {
+      document.querySelectorAll('.icon').forEach(icon => {
+          icon.classList.remove('active');
+      });
+  }
+
+  function removeAllViewClasses() {
+      document.body.classList.remove('desktop-view', 'tablet-view', 'mobile-view');
+      const previewContainer = document.querySelector('.preview-container');
+      if (previewContainer) {
+          previewContainer.classList.remove('desktop-view', 'tablet-view', 'mobile-view');
+      }
+  }
+
+  desktopIcon.addEventListener('click', function() {
+      setupPreviewMode();
+      removeActiveClass();
+      removeAllViewClasses();
+      this.classList.add('active');
+      document.body.classList.add('desktop-view');
+      const previewContainer = document.querySelector('.preview-container');
+      previewContainer.classList.add('desktop-view');
+      previewContainer.style.width = '100%';
+  });
+
+  tabletIcon.addEventListener('click', function() {
+      setupPreviewMode();
+      removeActiveClass();
+      removeAllViewClasses();
+      this.classList.add('active');
+      document.body.classList.add('tablet-view');
+      const previewContainer = document.querySelector('.preview-container');
+      previewContainer.classList.add('tablet-view');
+      previewContainer.style.width = '768px';
+  });
+
+  mobileIcon.addEventListener('click', function() {
+      setupPreviewMode();
+      removeActiveClass();
+      removeAllViewClasses();
+      this.classList.add('active');
+      document.body.classList.add('mobile-view');
+      const previewContainer = document.querySelector('.preview-container');
+      previewContainer.classList.add('mobile-view');
+      previewContainer.style.width = '360px';
+  });
+
+  function setInitialView() {
+      const width = window.innerWidth;
+      if (width >= 1024) {
+          desktopIcon.click();
+      } else if (width >= 768) {
+          tabletIcon.click();
+      } else {
+          mobileIcon.click();
+      }
+  }
+
+  setInitialView();
+});
