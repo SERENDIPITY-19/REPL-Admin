@@ -4,6 +4,11 @@
     --responsive-icon-hover-border-color: #999;
     --responsive-icon-hover-bg-color: #e0e0e0;
     --responsive-icon-color: #666;
+    --login-register-forgotpassword-bg-color: #2e59d9;
+    --form-control-border-color: #ddd;
+    --btn-google-color: #db4437;
+    --btn-facebook-color: #4267B2;
+    --divider-color: #ddd;
 }
 
 :root[data-theme="light"] {
@@ -25,7 +30,6 @@
     --collapse-header-color: #868686;
     --collapse-item-color: #2e2e2e;
     --hamburger-icon-color: #333;
-    --divider-color: #ddd;
     --main-header-color: black;
     --dashboard-icon-color: #858796;
     --border-left-primary-color: #4e73df;
@@ -34,10 +38,6 @@
     --border-left-warning-color: #f6c23e;
     --chart-placeholder-bg-color: #f1f1f1;
     --chart-placeholder-color: #777;
-    --login-register-forgotpassword-bg-color: #2372c0;
-    --form-control-border-color: #ddd;
-    --btn-google-color: #db4437;
-    --btn-facebook-color: #4267B2;
     --footer-color: #5a5c69;
     --scrollToTop-bg-color: #858796;
     --scrollToTop-color: #f8f9fc;
@@ -62,7 +62,6 @@
     --collapse-header-color: #817e7e;
     --collapse-item-color: black;
     --hamburger-icon-color: #e0e0e0;
-    --divider-color: #444;
     --main-header-color: white;
     --dashboard-icon-color: #a8a8a8;
     --border-left-primary-color: #3a8bdb;
@@ -71,10 +70,6 @@
     --border-left-warning-color: #d39e00;
     --chart-placeholder-bg-color: #292929;
     --chart-placeholder-color: #888;
-    --login-register-forgotpassword-bg-color: #232323;
-    --form-control-border-color: #444;
-    --btn-google-color: #ff6f61;
-    --btn-facebook-color: #3b5998;
     --footer-color: #a8a8a8;
     --scrollToTop-bg-color: #a8a8a8;
     --scrollToTop-color: #232323;
@@ -321,7 +316,7 @@ nav li a {
 .user-dropdown-menu {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 130px;
     right: 20px;
     background: var(--primary-bg-color);
     box-shadow: 0 4px 6px var(--box-shadow-color);
@@ -358,26 +353,28 @@ nav li a {
     padding: 10px;
     margin: 10px;
     padding-bottom: 0;
+    margin-bottom: 0;
     background-color: var(--main-bg-color);
 }
 
 main {
     background-color: var(--main-bg-color);
     padding: 10px;
+    padding-top: 0;
     margin: 10px;
+    margin-top: 0;
 }
 
-main section {
+/* main section {
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
 .row{
     --bs-gutter-x: 0;
 }
 
 .main-header {
-    margin-bottom: 1rem;
     color: var(--main-header-color);
 }
 
@@ -392,13 +389,10 @@ main section {
     color: var(--dashboard-icon-color);
 }
 
-.dashboard-cards {
-    margin-top: 10px;
-}
-
-.dashboard-cards .card {
+.cards .card {
     box-shadow: 0 4px 6px var(--box-shadow-color);
     border-radius: 10px;
+    margin: 15px;
 }
 
 .dashboard-card-body {
@@ -459,6 +453,26 @@ main section {
 
 
 /* Login and Register and Forgot Password*/
+.modified-layout-wrapper{
+    display: grid;
+    grid-template-areas:
+        "before-header"
+        "header"
+        "after-header"
+        "before-main"
+        "feature"
+        "aside-first"
+        "before-content"
+        "content"
+        "after-content"
+        "aside-second"
+        "after-main"
+        "before-footer"
+        "footer"
+        "after-footer"; 
+    grid-template-columns: auto;
+}
+
 .login-body,
 .register-body,
 .forgotpassword-body {
@@ -538,9 +552,6 @@ main section {
 .tables-container {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
 }
 
 .table-responsive {
@@ -607,6 +618,11 @@ footer {
         justify-content: space-between;
         align-items: center;
     }
+
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 22%;
+    }
 }
 
 /* Tablet View */
@@ -645,6 +661,11 @@ footer {
     .table th,
     .table td {
         white-space: nowrap;
+    }
+
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 42%;
     }
 }
 
