@@ -55,9 +55,14 @@ scrollToTopBtn.addEventListener("click", () => {
 
 
 // Toggle Navbar in Mobile View
-function toggleSidebar() {
-  document.body.classList.toggle("main-nav-open");
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerIcon = document.querySelector('.hamburger-icon');
+  if (hamburgerIcon) {
+      hamburgerIcon.addEventListener('click', function() {
+          document.body.classList.toggle('main-nav-open');
+      });
+  }
+});
 
 
 // Tables
@@ -106,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//Screen Preview 
+//Responsive Preview 
 document.addEventListener('DOMContentLoaded', function() {
   const desktopIcon = document.querySelector('.icon.desktop');
   const tabletIcon = document.querySelector('.icon.tablet');
