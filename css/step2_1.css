@@ -1,4 +1,4 @@
-:root{
+:root {
     --before-header-bg-color: #f9f9f9;
     --before-header-box-shadow-color: red;
     --responsive-icon-hover-border-color: #999;
@@ -75,9 +75,9 @@
     --scrollToTop-color: #232323;
 }
 
-body{
-    box-sizing: border-box;
-    margin-top:62px;
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .layout-wrapper>* {
@@ -95,7 +95,47 @@ li a {
 }
 
 /* Header */
-.before-header {
+.preview-container {
+    padding-top: 60px; 
+    min-height: calc(100vh - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.preview-container::-webkit-scrollbar {
+    display: none;
+}
+
+.preview-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.preview-container.tablet-mode,
+.preview-container.mobile-mode {
+    background-color: #1e2124;
+}
+
+.preview-frame {
+    border: none;
+    width: 100%;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease;
+}
+
+.desktop-view {
+    max-width: 100%;
+}
+
+.tablet-view {
+    max-width: 768px;
+}
+
+.mobile-view {
+    max-width: 375px;
+}
+
+.preview-controls {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,15 +144,11 @@ li a {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
+    height: 60px;
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 3px 0px var(--before-header-box-shadow-color) ;
-}
-
-.responsive-icons {
-    display: flex;
-    justify-content: center;
     gap: 20px;
+    box-shadow: 0 3px 0px var(--before-header-box-shadow-color);
 }
 
 .btn-icon {
@@ -121,12 +157,14 @@ li a {
     align-items: center;
     width: 50px;
     height: 50px;
+    background: none;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s;
 }
 
-.btn-icon i{
+.btn-icon i {
     font-size: 18px;
     color: var(--responsive-icon-color);
 }
@@ -141,6 +179,14 @@ li a {
     border: 2px solid var(--responsive-icon-hover-border-color);
 }
 
+.frame-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.before-header,
 .after-header {
     display: none;
 }
@@ -235,7 +281,7 @@ nav li a {
     color: var(--secondary-text-color);
 }
 
-.navigation{
+.navigation {
     word-wrap: normal;
 }
 
@@ -323,7 +369,7 @@ nav li a {
 .user-dropdown-menu {
     display: none;
     position: absolute;
-    top: 130px;
+    top: 73px;
     right: 20px;
     background: var(--primary-bg-color);
     box-shadow: 0 4px 6px var(--box-shadow-color);
@@ -367,7 +413,6 @@ main {
     background-color: var(--main-bg-color);
     padding: 10px;
     padding-top: 0;
-    /* margin: 10px; */
     margin-top: 0;
 }
 
@@ -376,7 +421,7 @@ main {
     flex-wrap: wrap;
 } */
 
-.row{
+.row {
     --bs-gutter-x: 0;
 }
 
@@ -578,46 +623,14 @@ footer {
     border-radius: 10px;
     font-size: 1.5rem;
     cursor: pointer;
-}
-
-body.preview-mode {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    background-color: #1e2124;
-}
-
-body.preview-mode.desktop-view {
-    background-color: initial;
-}
-
-.preview-container {
-    position: relative;
-    background-color: white;
-    overflow: hidden;
-    transition: width 0.2s ease;
-}
-
-.preview-container.mobile-view {
-    max-width: 767px;
-}
-
-.preview-container.tablet-view {
-    max-width: 1023px;
-    min-width: 768px;
-}
-
-.preview-container.desktop-view {
-    min-width: 1024px;
+    z-index: 1000;
 }
 
 
 /* Responsive Design */
 /* Desktop View */
-@media (min-width: 1024px)
-{ 
-    .page-header .search-input{
+@media (min-width: 1024px) {
+    .page-header .search-input {
         max-width: 400px;
     }
 
@@ -646,8 +659,7 @@ body.preview-mode.desktop-view {
 }
 
 /* Tablet View */
-@media (min-width: 768px) and (max-width: 1023px) 
-{
+@media (min-width: 768px) and (max-width: 1023px) {
     .page-header .search-input {
         max-width: 250px;
     }
@@ -691,13 +703,12 @@ body.preview-mode.desktop-view {
 }
 
 /* Mobile View */
-@media (max-width: 767px)  
- {
-    .layout-wrapper{
+@media (max-width: 767px) {
+    .layout-wrapper {
         grid-template-columns: auto 5fr;
     }
 
-    .page-header{
+    .page-header {
         position: relative;
     }
 
@@ -707,13 +718,13 @@ body.preview-mode.desktop-view {
         color: var(--hamburger-icon-color);
         position: absolute;
         top: 12px;
-        left: 10px;
+        left: 3px;
         z-index: 2;
         cursor: pointer;
     }
 
     .page-header-content {
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
     .page-header .search-input {
@@ -722,6 +733,12 @@ body.preview-mode.desktop-view {
 
     .page-header .search-icon {
         left: 90px;
+    }
+
+    .navbar-heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .main-nav .nav-item .toggle-icon,
@@ -779,28 +796,43 @@ body.preview-mode.desktop-view {
         padding-right: 0;
     }
 
+    .collapse-header{
+        font-size: 10px;
+        padding: 5px 0px 0px 5px;
+    }
+
     .site-title,
     .site-user .username {
         display: none;
     }
 
     .site-logo {
-        position: absolute;
-        left: 2rem;
+        justify-content: center;
     }
 
     .main-nav {
-        position: absolute;
-        top: 62px;
+        position: fixed;
         left: -100px;
         width: 100px;
-        height: calc(100vh - 62px);
+        height: 100vh;
         transition: left 0.3s ease;
         z-index: 1000;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
+    
+.main-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.main-nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
     body.main-nav-open .main-nav {
-        left: 0 !important;
+        left: 0;
     }
 
     body:not(.main-nav-open) .page-header,
@@ -808,16 +840,16 @@ body.preview-mode.desktop-view {
     body:not(.main-nav-open) .page-header .hamburger-icon,
     body:not(.main-nav-open) .content,
     body:not(.main-nav-open) .footer {
-        width: 100% !important;
-        margin-left: 0 !important;
+        width: 100%;
+        margin-left: 0;
     }
 
     body.main-nav-open .page-header,
     body.main-nav-open .before-main,
     body.main-nav-open .content,
     body.main-nav-open .footer {
-        margin-left: 100px !important;
-        transition: margin-left 0.3s ease !important;
+        margin-left: 100px;
+        transition: margin-left 0.3s ease;
 
     }
 
@@ -835,12 +867,12 @@ body.preview-mode.desktop-view {
         white-space: nowrap;
     }
 
-    .card{
+    .card {
         flex: 0 0 auto;
         width: 90%;
     }
 
-    .chart{
+    .chart {
         flex: 0 0 auto;
         width: 100%;
     }

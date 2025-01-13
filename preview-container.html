@@ -5,51 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <style>
-        .preview-container {
-            padding: 20px;
-        }
-        
-        .preview-frame {
-            border: 1px solid #ddd;
-            width: 100%;
-            height: 800px;
-            transition: all 0.3s ease;
-        }
-        
-        .desktop-view {
-            max-width: 100%;
-        }
-        
-        .tablet-view {
-            max-width: 768px;
-            margin: 0 auto;
-        }
-        
-        .mobile-view {
-            max-width: 375px;
-            margin: 0 auto;
-        }
-
-        .preview-controls {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .btn-icon {
-            padding: 10px;
-            margin: 0 5px;
-            background: none;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn-icon.active {
-            background-color: #e9ecef;
-            border-color: #dee2e6;
-        }
-    </style>
+    <link rel="stylesheet" href="css/layout1.css">
+    <link rel="stylesheet" href="css/step2_1.css">
 </head>
 <body>
     <div class="preview-controls">
@@ -63,30 +20,37 @@
             <i class="fa-solid fa-mobile"></i>
         </button>
     </div>
-    <div class="preview-container">
-        <iframe 
-            src="index.html" 
-            class="preview-frame desktop-view" 
-            id="previewFrame"
-            frameborder="0">
-        </iframe>
+    <div class="preview-container" id="previewContainer">
+        <div class="frame-wrapper">
+            <iframe 
+                src="index.html" 
+                class="preview-frame desktop-view" 
+                id="previewFrame"
+                frameborder="0">
+            </iframe>
+        </div>
     </div>
 
     <script>
         const buttons = document.querySelectorAll('.btn-icon');
         const frame = document.getElementById('previewFrame');
+        const container = document.getElementById('previewContainer');
 
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 buttons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
+                container.classList.remove('tablet-mode', 'mobile-mode');
+
                 if (button.id === 'desktopToggle') {
                     frame.className = 'preview-frame desktop-view';
                 } else if (button.id === 'tabletToggle') {
                     frame.className = 'preview-frame tablet-view';
+                    container.classList.add('tablet-mode');
                 } else if (button.id === 'mobileToggle') {
                     frame.className = 'preview-frame mobile-view';
+                    container.classList.add('mobile-mode');
                 }
             });
         });
