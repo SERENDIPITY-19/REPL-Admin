@@ -36,8 +36,6 @@
     --border-left-success-color: #1cc88a;
     --border-left-info-color: #36b9cc;
     --border-left-warning-color: #f6c23e;
-    --chart-placeholder-bg-color: #f1f1f1;
-    --chart-placeholder-color: #777;
     --footer-color: #5a5c69;
     --scrollToTop-bg-color: #858796;
     --scrollToTop-color: #f8f9fc;
@@ -68,8 +66,6 @@
     --border-left-success-color: #28a745;
     --border-left-info-color: #138496;
     --border-left-warning-color: #d39e00;
-    --chart-placeholder-bg-color: #292929;
-    --chart-placeholder-color: #888;
     --footer-color: #a8a8a8;
     --scrollToTop-bg-color: #a8a8a8;
     --scrollToTop-color: #232323;
@@ -96,7 +92,7 @@ li a {
 
 /* Header */
 .preview-container {
-    padding-top: 60px; 
+    padding-top: 60px;
     min-height: calc(100vh - 60px);
     overflow-x: hidden;
     overflow-y: auto;
@@ -415,11 +411,6 @@ main {
     margin-top: 0;
 }
 
-/* main section {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
 .row {
     --bs-gutter-x: 0;
 }
@@ -439,10 +430,9 @@ main {
     color: var(--dashboard-icon-color);
 }
 
-.cards .card {
+.card {
     box-shadow: 0 4px 6px var(--box-shadow-color);
     border-radius: 10px;
-    margin: 15px;
 }
 
 .dashboard-card-body {
@@ -476,33 +466,25 @@ main {
     position: relative;
 }
 
-.progress {
+.tasks-progress {
     height: 6px;
     width: 70px;
     margin-top: 0.5rem;
 }
 
-.progress-bar {
+.projects-progress{
+    height: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.tasks-progress-bar {
     width: 50%;
     height: 100%;
 }
 
-.charts-section .chart {
-    padding: 15px;
-}
-
-.chart-placeholder {
-    height: 200px;
-    background-color: var(--chart-placeholder-bg-color);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--chart-placeholder-color);
-}
-
-.chart-area{
-    height: 320px;
+.projects-progress-bar{
+    height: 100%;
 }
 
 
@@ -609,8 +591,11 @@ footer {
     grid-area: footer;
     background-color: var(--primary-bg-color);
     color: var(--footer-color);
-    padding: 1rem;
     text-align: center;
+}
+
+.footer{
+    padding: 1rem;
 }
 
 /* Scroll to Top Button */
@@ -660,10 +645,22 @@ footer {
     }
 
     .login-container,
-.register-container,
-.forgotpassword-container{
-    width: 600px;
-}
+    .register-container,
+    .forgotpassword-container {
+        width: 600px;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 800px;
+        height: 320px;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .card {
+        margin: 15px;
+    }
 }
 
 /* Tablet View */
@@ -710,10 +707,22 @@ footer {
     }
 
     .login-container,
-.register-container,
-.forgotpassword-container{
-    width: 400px;
-}
+    .register-container,
+    .forgotpassword-container {
+        width: 400px;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 500px;
+        height: 250px;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .card {
+        margin: 10px;
+    }
 }
 
 /* Mobile View */
@@ -810,7 +819,7 @@ footer {
         padding-right: 0;
     }
 
-    .collapse-header{
+    .collapse-header {
         font-size: 10px;
         padding: 5px 0px 0px 5px;
     }
@@ -837,15 +846,15 @@ footer {
         overflow-x: hidden;
     }
 
-    
-.main-nav::-webkit-scrollbar {
-    display: none;
-}
 
-.main-nav {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 
     body.main-nav-open .main-nav {
         left: 0;
@@ -885,16 +894,20 @@ footer {
     .card {
         flex: 0 0 auto;
         width: 90%;
-    }
-
-    .chart {
-        flex: 0 0 auto;
-        width: 100%;
+        margin: 10px;
     }
 
     .login-container,
-.register-container,
-.forgotpassword-container{
-    width: 200px;
-}
+    .register-container,
+    .forgotpassword-container {
+        width: 200px;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 250px;
+        height: 200px;
+        margin: 10px auto;
+        padding: 10px;
+    }
 }
