@@ -84,8 +84,7 @@
                 </div>
 
                 <li class="nav-item">
-                    <div class="toggle-area" data-bs-toggle="collapse"
-                        data-bs-target="#components-collapse">
+                    <div class="toggle-area" data-bs-toggle="collapse" data-bs-target="#components-collapse">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Components</span>
                         <i class="fas fa-chevron-right toggle-icon"></i>
@@ -98,8 +97,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <div class="toggle-area" data-bs-toggle="collapse"
-                        data-bs-target="#utilities-collapse">
+                    <div class="toggle-area" data-bs-toggle="collapse" data-bs-target="#utilities-collapse">
                         <i class="fas fa-fw fa-wrench"></i>
                         <span>Utilities</span>
                         <i class="fas fa-chevron-right toggle-icon"></i>
@@ -120,8 +118,7 @@
                 </div>
 
                 <li class="nav-item">
-                    <div class="toggle-area" data-bs-toggle="collapse"
-                        data-bs-target="#pages-collapse">
+                    <div class="toggle-area" data-bs-toggle="collapse" data-bs-target="#pages-collapse">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Pages</span>
                         <i class="fas fa-chevron-right toggle-icon"></i>
@@ -151,63 +148,78 @@
                 </li>
 
                 <hr class="navbar-divider my-0">
-                
+
             </ul>
         </nav>
 
         <!-- Main Content Section -->
-         <div class="before-main main-header main-header-tables">
+        <div class="before-main main-header main-header-tables">
             <h2 class="page-title">Tables</h2>
-                <p>
-                    DataTables is a third party plugin that is used to generate the demo
-                    table below. For more information about DataTables, please visit the
-                    official DataTables documentation.
-                </p>
-         </div>
+            <p>
+                DataTables is a third party plugin that is used to generate the demo
+                table below. For more information about DataTables, please visit the
+                <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.
+            </p>
+        </div>
         <main class="content main-container main-container-tables">
+
             <section class="container tables-container">
-                <h3 class="database-table-title">DataTables Example</h3>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Name">Ram Bahadur</td>
-                                <td data-label="Position">Accountant</td>
-                                <td data-label="Office">Nepal</td>
-                                <td data-label="Age">33</td>
-                                <td data-label="Start date">2008/11/28</td>
-                                <td data-label="Salary">NRs.50,000</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Name">Tom Smith</td>
-                                <td data-label="Position">CEO</td>
-                                <td data-label="Office">London</td>
-                                <td data-label="Age">47</td>
-                                <td data-label="Start date">2009/10/09</td>
-                                <td data-label="Salary">$1,200,000</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>2011/04/25</td>
+                                        <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrett Winters</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>63</td>
+                                        <td>2011/07/25</td>
+                                        <td>$170,750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>Junior Technical Author</td>
+                                        <td>San Francisco</td>
+                                        <td>66</td>
+                                        <td>2009/01/12</td>
+                                        <td>$86,000</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

@@ -1,5 +1,5 @@
-var ctx = document.getElementById('myAreaChart').getContext('2d');
-        var myAreaChart = new Chart(ctx, {
+var ctx1 = document.getElementById('myAreaChart').getContext('2d');
+        var myAreaChart = new Chart(ctx1, {
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
