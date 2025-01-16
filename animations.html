@@ -65,7 +65,7 @@
                 <div class="site-title">REPL ADMIN</div>
             </div>
 
-            <hr class="navbar-divider-first">
+            <hr class="navbar-divider-first" />
 
             <ul class="nav-list">
                 <li class="nav-item active">
@@ -75,15 +75,12 @@
                     </a>
                 </li>
 
-                <hr class="navbar-divider my-0">
+                <hr class="navbar-divider my-0" />
 
-                <div class="navbar-heading">
-                    INTERFACE
-                </div>
+                <div class="navbar-heading">INTERFACE</div>
 
                 <li class="nav-item">
-                    <div class="toggle-area" data-bs-toggle="collapse"
-                        data-bs-target="#components-collapse">
+                    <div class="toggle-area" data-bs-toggle="collapse" data-bs-target="#components-collapse">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Components</span>
                         <i class="fas fa-chevron-right toggle-icon"></i>
@@ -96,8 +93,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <div class="toggle-area" data-bs-toggle="collapse"
-                        data-bs-target="#utilities-collapse">
+                    <div class="toggle-area" data-bs-toggle="collapse" data-bs-target="#utilities-collapse">
                         <i class="fas fa-fw fa-wrench"></i>
                         <span>Utilities</span>
                         <i class="fas fa-chevron-right toggle-icon"></i>
@@ -111,15 +107,12 @@
                     </div>
                 </li>
 
-                <hr class="navbar-divider my-0">
+                <hr class="navbar-divider my-0" />
 
-                <div class="navbar-heading">
-                    ADDONS
-                </div>
+                <div class="navbar-heading">ADDONS</div>
 
                 <li class="nav-item">
-                    <div class="toggle-area" data-bs-toggle="collapse"
-                        data-bs-target="#pages-collapse">
+                    <div class="toggle-area" data-bs-toggle="collapse" data-bs-target="#pages-collapse">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Pages</span>
                         <i class="fas fa-chevron-right toggle-icon"></i>
@@ -148,33 +141,51 @@
                     </a>
                 </li>
 
-                <hr class="navbar-divider my-0">
-                
+                <hr class="navbar-divider my-0" />
             </ul>
         </nav>
 
         <!-- Main Content Section -->
-         <div class="before-main main-header main-header-animations">
+        <div class="before-main main-header main-header-animations">
             <h2 class="page-title">Animations</h2>
-                <p>
-                    Bootstrap's default utility classes can be found on the official
-                    Bootstrap Documentation page. The custom utilities below were
-                    created to extend this theme past the default utility classes built
-                    into Bootstrap's framework.
-                </p>
-
-         </div>
+            <p>
+                Bootstrap's default utility classes can be found on the official
+                <a href="https://getbootstrap.com/docs" target="_blank">Bootstrap Documentation</a>
+                page. The custom utilities below were created to extend this theme
+                past the default utility classes built into Bootstrap's framework.
+            </p>
+        </div>
         <main class="content main-container main-container-animations">
-            <section class="cards animations-page-section row mt-4">
+            <section class="cards animations-page-section row">
                 <article class="grow-in-animation col-lg-6">
                     <div class="card">
+                        <div class="card-header py-3">
+                            <h6 class="m-0">Grow In Animation Utility</h6>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Grow In Animation Utility</h5>
-                            <p>.animated--grow-in</p>
-                            <p>Navbar Dropdown Example:</p>
-                            <p>Navbar</p>
-                            <p>Dropdown</p>
-                            <p>
+                            <div class="mb-3">
+                                <code>.animated--grow-in</code>
+                            </div>
+                            <div class="small mb-1">Navbar Dropdown Example:</div>
+                            <div class="navbar navbar-expand navbar-animations bg-light mb-4">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropdown
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end animated--grow-in"
+                                            aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="mb-0 small">
                                 Note: This utility animates the CSS transform property,
                                 meaning it will override any existing transforms on an element
                                 being animated! In this theme, the grow in animation is only
@@ -183,17 +194,51 @@
                         </div>
                     </div>
                 </article>
+
                 <article class="fade-in-animation col-lg-6">
                     <div class="card">
+                        <div class="card-header py-3">
+                            <h6 class="m-0">Fade In Animation Utility</h6>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Fade In Animation Utility</h5>
-                            <p>.animated--fade-in</p>
-                            <p>Navbar Dropdown Example:</p>
-                            <p>Navbar</p>
-                            <p>Dropdown</p>
-                            <p>Dropdown Button Example:</p>
-                            <p>
-                                Note: This utility animates the CSS opacity property, meaning it will override any existing opacity  on an element being animated!
+                            <div class="mb-3">
+                                <code>.animated--fade-in</code>
+                            </div>
+                            <div class="small mb-1">Navbar Dropdown Example:</div>
+                            <div class="navbar navbar-expand bg-light mb-4 navbar-animations">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropdown
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in"
+                                            aria-labelledby="navbarDropdown2">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="small mb-1">Dropdown Button Example:</div>
+                            <div class="dropdown mb-4">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </button>
+                                <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                            <p class="mb-0 small">
+                                Note: This utility animates the CSS opacity property, meaning
+                                it will override any existing opacity on an element being
+                                animated!
                             </p>
                         </div>
                     </div>

@@ -154,46 +154,92 @@
         </nav>
 
         <!-- Main Content Section -->
-         <div class="before-main main-header main-header-other">
+
+        <div class="before-main main-header main-header-other">
             <h2 class="page-title">Other Utilities</h2>
-                <p>Bootstrap's default utility classes can be found on the official Bootstrap Documentation page. The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.</p>
-         </div>
+            <p>Bootstrap's default utility classes can be found on the official <a href="https://getbootstrap.com/docs">Bootstrap Documentation</a> page. The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.</p>
+        </div>
+
         <main class="content main-container main-container-other">
             <section class="cards other-section-cards row mt-4">
-                <article class="overflow-hidden col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Overflow Hidden Utility</h5>
-                            <p>Use .o-hidden to set the overflow property of any element to hidden.</p>
+                <div class="col-lg-6">
+                    <article class="overflow-hidden">
+                        <!-- Overflow Hidden -->
+                        <div class="card mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Overflow Hidden Utilty</h6>
+                            </div>
+                            <div class="card-body">
+                                Use <code>.o-hidden</code> to set the overflow property of any element to hidden.
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="rotation-utilitty col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rotation Utilities</h5>
-                            <p>.rotate-15 <br> .rotate-n-15</p>
+                    </article>
+        
+                    <article class="progress-small-utilities">
+                        <!-- Progress Small -->
+                        <div class="card mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Progress Small Utility</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-1 small">Normal Progress Bar</div>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="mb-1 small">Small Progress Bar</div>
+                                <div class="progress progress-sm mb-2">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                Use the <code>.progress-sm</code> class along with <code>.progress</code>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="progress-small-utilities col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Progress Small Utilities</h5>
-                            <p>Normal Progress Bar <br> Small Progress Bar <br> Use the .progress-sm class along with .progress</p>
+                    </article>
+        
+                    <article class="dropdown-no-arrow">
+                        <!-- Dropdown No Arrow -->
+                        <div class="card mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Dropdown - No Arrow</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="dropdown no-arrow mb-4">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Dropdown (no arrow)
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                                Add the <code>.no-arrow</code> class alongside the <code>.dropdown</code>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="dropdown-no-arrow col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Dropdown - No Arrow</h5>
-                            <p>Add the .no-arrow class alongside the .dropdown</p>
+                    </article>
+                </div>
+        
+                <div class="col-lg-6">
+                    <article class="rotation-utility">
+                        <!-- Rotation Utilities -->
+                        <div class="card">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Rotation Utilities</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="bg-primary text-white p-3 rotate-15 d-inline-block my-4">.rotate-15
+                                </div>
+                                <hr>
+                                <div class="bg-primary text-white p-3 rotate-n-15 d-inline-block my-4">.rotate-n-15
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </section>
-            
         </main>
 
         <!-- Footer Section -->
