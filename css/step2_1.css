@@ -90,7 +90,7 @@ li a {
     color: var(--link-default-color);
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -282,6 +282,24 @@ nav li a {
 
 .navigation {
     word-wrap: normal;
+}
+
+.main-nav ul {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.main-nav ul::-webkit-scrollbar {
+    width: 4px;
+}
+
+.main-nav ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-nav ul::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 124);
+    border-radius: 10px;
 }
 
 .main-nav .logo-container {
@@ -631,21 +649,61 @@ main {
     margin-bottom: 1.5rem;
 }
 
-.border-left-primary { border-left: 0.25rem solid #4e73df !important; }
-.border-left-secondary { border-left: 0.25rem solid #858796 !important; }
-.border-left-success { border-left: 0.25rem solid #1cc88a !important; }
-.border-left-info { border-left: 0.25rem solid #36b9cc !important; }
-.border-left-warning { border-left: 0.25rem solid #f6c23e !important; }
-.border-left-danger { border-left: 0.25rem solid #e74a3b !important; }
-.border-left-dark { border-left: 0.25rem solid #5a5c69 !important; }
+.border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+}
 
-.border-bottom-primary { border-bottom: 0.25rem solid #4e73df !important; }
-.border-bottom-secondary { border-bottom: 0.25rem solid #858796 !important; }
-.border-bottom-success { border-bottom: 0.25rem solid #1cc88a !important; }
-.border-bottom-info { border-bottom: 0.25rem solid #36b9cc !important; }
-.border-bottom-warning { border-bottom: 0.25rem solid #f6c23e !important; }
-.border-bottom-danger { border-bottom: 0.25rem solid #e74a3b !important; }
-.border-bottom-dark { border-bottom: 0.25rem solid #5a5c69 !important; }
+.border-left-secondary {
+    border-left: 0.25rem solid #858796 !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid #36b9cc !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid #f6c23e !important;
+}
+
+.border-left-danger {
+    border-left: 0.25rem solid #e74a3b !important;
+}
+
+.border-left-dark {
+    border-left: 0.25rem solid #5a5c69 !important;
+}
+
+.border-bottom-primary {
+    border-bottom: 0.25rem solid #4e73df !important;
+}
+
+.border-bottom-secondary {
+    border-bottom: 0.25rem solid #858796 !important;
+}
+
+.border-bottom-success {
+    border-bottom: 0.25rem solid #1cc88a !important;
+}
+
+.border-bottom-info {
+    border-bottom: 0.25rem solid #36b9cc !important;
+}
+
+.border-bottom-warning {
+    border-bottom: 0.25rem solid #f6c23e !important;
+}
+
+.border-bottom-danger {
+    border-bottom: 0.25rem solid #e74a3b !important;
+}
+
+.border-bottom-dark {
+    border-bottom: 0.25rem solid #5a5c69 !important;
+}
 
 
 /* Animations */
@@ -660,6 +718,7 @@ main {
         transform: scale(0.9);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -676,12 +735,13 @@ main {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
 
-.navbar-animations{
+.navbar-animations {
     flex-direction: row;
     padding: 10px;
 }
@@ -689,25 +749,25 @@ main {
 /* Utilities */
 .rotate-15 {
     transform: rotate(15deg);
-  }
-  
-  .rotate-n-15 {
+}
+
+.rotate-n-15 {
     transform: rotate(-15deg);
-  }
+}
 
-  .progress-sm {
+.progress-sm {
     height: 0.5rem;
-  }
+}
 
-  .o-hidden {
+.o-hidden {
     overflow: hidden !important;
-  }
+}
 
-  .dropdown.no-arrow {
+.dropdown.no-arrow {
     .dropdown-toggle::after {
-      display: none;
+        display: none;
     }
-  }
+}
 
 
 /* Login and Register and Forgot Password*/
@@ -731,17 +791,18 @@ main {
     box-shadow: 0px 4px 10px var(--box-shadow-color);
 }
 
+.main-container-404page,
+.main-container-blankpage {
+    min-height: 100vh;
+}
+
 .pages-form {
     display: flex;
     flex-direction: column;
 }
 
-.form-control {
-    padding: 0.75rem;
-    margin: 0.75rem;
-    border: 1px solid var(--form-control-border-color);
-    border-radius: 8px;
-    font-size: 1rem;
+.page-input {
+    margin-bottom: 0.75rem;
 }
 
 .form-check,
@@ -749,10 +810,7 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-}
-
-.form-check input {
-    margin-right: 0.5rem;
+    gap: 10px;
 }
 
 .btn-google {
@@ -857,7 +915,7 @@ footer {
         width: 22%;
     }
 
-    .border-card{
+    .border-card {
         flex: 0 0 auto;
         width: 46%;
     }
@@ -909,7 +967,7 @@ footer {
         overflow-x: scroll;
     }
 
-    .tables-container{
+    .tables-container {
         max-width: 600px;
     }
 
@@ -928,7 +986,7 @@ footer {
         width: 46%;
     }
 
-    .border-card{
+    .border-card {
         flex: 0 0 auto;
         width: 46%;
     }
@@ -1013,7 +1071,6 @@ footer {
 
     }
 
-    .main-nav .nav-list .nav-item a,
     .main-nav .nav-list .nav-item span {
         font-size: 0.85rem;
         display: flex;
@@ -1051,6 +1108,10 @@ footer {
         padding: 5px 0px 0px 5px;
     }
 
+    .collapse-item {
+        font-size: 11px;
+    }
+
     .site-title,
     .site-user .username {
         display: none;
@@ -1068,19 +1129,7 @@ footer {
         transition: left 0.3s ease;
         z-index: 1000;
         top: 0;
-        padding-top: 29px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-
-    .main-nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .main-nav {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        padding-top: 10px;
     }
 
     body.main-nav-open .main-nav {
@@ -1109,10 +1158,10 @@ footer {
     }
 
 
-    .tables-container{
+    .tables-container {
         max-width: 380px;
     }
-    
+
     .tables-container .table {
         min-width: 500px;
         border-collapse: collapse;
@@ -1132,7 +1181,7 @@ footer {
     .login-container,
     .register-container,
     .forgotpassword-container {
-        width: 200px;
+        margin: 60px 0 20px 0;
     }
 
     .chart-container {
@@ -1141,5 +1190,9 @@ footer {
         height: 200px;
         margin: 10px auto;
         padding: 10px;
+    }
+
+    .form-row {
+        flex-wrap: wrap;
     }
 }
