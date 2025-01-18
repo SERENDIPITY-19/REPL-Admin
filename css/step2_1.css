@@ -185,11 +185,6 @@ a {
     justify-content: center;
 }
 
-.before-header,
-.after-header {
-    display: none;
-}
-
 .page-header {
     display: flex;
     align-items: center;
@@ -411,14 +406,6 @@ nav li a {
 
 
 /* Main */
-.feature,
-.aside-first,
-.after-content,
-.aside-second,
-.after-main {
-    display: none;
-}
-
 .before-main {
     padding: 10px;
     padding-bottom: 0;
@@ -844,20 +831,7 @@ main {
     overflow-x: auto;
 }
 
-
-
-/* Sidebar */
-.sidebar {
-    display: none;
-}
-
-
 /* Footer */
-.before-footer,
-.after-footer {
-    display: none;
-}
-
 footer {
     grid-area: footer;
     background-color: var(--primary-bg-color);
